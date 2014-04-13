@@ -1,0 +1,66 @@
+\documentclass[12pt,letterpaper,oneside]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[left=2cm,right=2cm,top=0cm,bottom=2cm]{geometry}
+\usepackage{indentfirst}
+\usepackage{algorithm2e}
+
+\author{Jonathan McElroy}
+\title{Algorithm Analysis}
+
+\begin{document}
+\pagenumbering{gobble}% Remove page numbers (and reset to 1)
+
+\maketitle
+
+\section*{Description} % Describe problem to be solved
+
+When data is sorted ascending order, finding the maximum value (or minimum value) is trivial. You simply select the last element in the set. However, if the data is not sorted, you must inspect each element in the set to determine which element is the largest. Because it takes more time to sort the data then it does to inspect each item once, the optimal solution to this problem is a simple linear search.
+
+\section*{Data Structure} % What data structure will be used by this algorithm
+
+The data structure used in the algorithm is a list of values. These values are templated and must be comparable by the less than operator.
+
+\section*{Algorithm} % Give pseudocode for the algorithm
+
+\begin{algorithm}[h]
+\KwIn{A list of values}
+\KwOut{The maximum value in the list}
+max = first element in the list
+
+\ForEach{element in the list}{
+  \If{best \textless element}{
+    max = element
+  }
+}
+return max
+\end{algorithm}
+
+\section*{Analysis}
+\begin{tabular}{|l|l|}
+\hline
+Input N& length of the list \\ \hline % data input size
+Basic Operation& \textless \\ \hline % what operation will dominate the algorithm
+Summation or Recurrence Relation& \( \displaystyle\sum\limits_{i=1}^n i \) \\ \hline % expression that describes the algorithm performance
+\end{tabular}
+
+
+\section*{Worst Case Analysis}
+% Worst Case algorithm analysis
+
+\( T(n) = \displaystyle\sum\limits_{i=1}^n i \)
+
+\( T(n) = n \)
+
+\( T(n) = \theta(n) \)
+
+\section*{Best Case Analysis}
+%Best Case algorithm analysis
+
+
+\( T(n) = \displaystyle\sum\limits_{i=1}^n i \)
+
+\( T(n) = n \)
+
+\( T(n) = \theta(n) \)
+
+\end{document

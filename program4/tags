@@ -1,0 +1,107 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+HUFFMAN_H	huffman.h	2;"	d
+Huffinner	huffman.cpp	/^        Huffinner(Huffnode* l, Huffnode* r) : left(l), right(r) {}$/;"	f	class:Huffinner
+Huffinner	huffman.cpp	/^class Huffinner : public Huffnode {$/;"	c	file:
+Huffinner	huffman.h	/^        Huffinner(Huffnode* l, Huffnode* r) : left(l), right(r) {}$/;"	f	class:Huffinner
+Huffinner	huffman.h	/^class Huffinner : public Huffnode {$/;"	c
+Huffleaf	huffman.cpp	/^    Huffleaf(char c) :ch(c) {}$/;"	f	class:Huffleaf
+Huffleaf	huffman.cpp	/^class Huffleaf : public Huffnode {$/;"	c	file:
+Huffleaf	huffman.h	/^    Huffleaf(char c) :ch(c) {}$/;"	f	class:Huffleaf
+Huffleaf	huffman.h	/^class Huffleaf : public Huffnode {$/;"	c
+Huffnode	huffman.cpp	/^class Huffnode {$/;"	c	file:
+Huffnode	huffman.h	/^class Huffnode {$/;"	c
+Hufftree	huffman.cpp	/^        Hufftree(const Hufftree& h) : root(h.root) {}$/;"	f	class:Hufftree
+Hufftree	huffman.cpp	/^Hufftree::Hufftree(map<char, int> m) {$/;"	f	class:Hufftree
+Hufftree	huffman.cpp	/^class Hufftree {$/;"	c	file:
+Hufftree	huffman.h	/^        Hufftree(const Hufftree& h) : root(h.root) {}$/;"	f	class:Hufftree
+Hufftree	huffman.h	/^class Hufftree {$/;"	c
+Inputer	huffman.cpp	/^Inputer::Inputer(string source) : count(0) {$/;"	f	class:Inputer
+Inputer	huffman.cpp	/^class Inputer {$/;"	c	file:
+Inputer	huffman.h	/^class Inputer {$/;"	c
+MAGIC	huffman.cpp	/^const int MAGIC = 200 + (200 << 8) + (200 << 16) + (200 << 24);$/;"	v
+MAGIC	huffman.h	/^const int MAGIC = 200 + (200 << 8) + (200 << 16) + (200 << 24);$/;"	v
+Outputer	huffman.cpp	/^Outputer::Outputer(string destination, map<char, int> m) : count(0), buffer('\\0'), freq(m), size(8+5*m.size()){$/;"	f	class:Outputer
+Outputer	huffman.cpp	/^class Outputer {$/;"	c	file:
+Outputer	huffman.h	/^class Outputer {$/;"	c
+buffer	huffman.cpp	/^        char buffer;$/;"	m	class:Inputer	file:
+buffer	huffman.cpp	/^        char buffer;$/;"	m	class:Outputer	file:
+buffer	huffman.h	/^        char buffer;$/;"	m	class:Inputer
+buffer	huffman.h	/^        char buffer;$/;"	m	class:Outputer
+ch	huffman.cpp	/^        char ch;$/;"	m	class:Huffleaf	file:
+ch	huffman.h	/^        char ch;$/;"	m	class:Huffleaf
+compValue	huffman.cpp	/^        char compValue() const {return left->compValue();}$/;"	f	class:Huffinner
+compValue	huffman.cpp	/^    char compValue() const {return ch;}$/;"	f	class:Huffleaf
+compValue	huffman.h	/^        char compValue() const {return left->compValue();}$/;"	f	class:Huffinner
+compValue	huffman.h	/^    char compValue() const {return ch;}$/;"	f	class:Huffleaf
+copy	huffman.cpp	/^        Huffinner* copy() const {return new Huffinner(left->copy(), right->copy());}$/;"	f	class:Huffinner
+copy	huffman.cpp	/^    Huffleaf* copy() const {return new Huffleaf(ch);}$/;"	f	class:Huffleaf
+copy	huffman.h	/^        Huffinner* copy() const {return new Huffinner(left->copy(), right->copy());}$/;"	f	class:Huffinner
+copy	huffman.h	/^    Huffleaf* copy() const {return new Huffleaf(ch);}$/;"	f	class:Huffleaf
+count	huffman.cpp	/^        int count;$/;"	m	class:Outputer	file:
+count	huffman.cpp	/^        short count;$/;"	m	class:Inputer	file:
+count	huffman.h	/^        int count;$/;"	m	class:Outputer
+count	huffman.h	/^        short count;$/;"	m	class:Inputer
+decrypt	huffman.cpp	/^bool decrypt(string source, string destination) {$/;"	f
+encrypt	huffman.cpp	/^bool encrypt(string source, string destination) {$/;"	f
+file	huffman.cpp	/^        ofstream file;$/;"	m	class:Outputer	file:
+file	huffman.h	/^        ofstream file;$/;"	m	class:Outputer
+flush	huffman.cpp	/^void Outputer::flush() {$/;"	f	class:Outputer
+freq	huffman.cpp	/^        map<char, int> freq;$/;"	m	class:Outputer	file:
+freq	huffman.h	/^        map<char, int> freq;$/;"	m	class:Outputer
+getHuffmanEncoding	huffman.cpp	/^map<char, string> Huffinner::getHuffmanEncoding(const string& prefix) const {$/;"	f	class:Huffinner
+getHuffmanEncoding	huffman.cpp	/^map<char, string> Huffleaf::getHuffmanEncoding(const string& prefix) const {$/;"	f	class:Huffleaf
+getLeft	huffman.cpp	/^        Huffnode* getLeft() const {return left;}$/;"	f	class:Huffinner
+getLeft	huffman.cpp	/^    Huffnode* getLeft() const {return NULL;}$/;"	f	class:Huffleaf
+getLeft	huffman.h	/^        Huffnode* getLeft() const {return left;}$/;"	f	class:Huffinner
+getLeft	huffman.h	/^    Huffnode* getLeft() const {return NULL;}$/;"	f	class:Huffleaf
+getMap	huffman.cpp	/^map<char, int> Inputer::getMap() {$/;"	f	class:Inputer
+getRight	huffman.cpp	/^        Huffnode* getRight() const {return right;}$/;"	f	class:Huffinner
+getRight	huffman.cpp	/^    Huffnode* getRight() const {return NULL;}$/;"	f	class:Huffleaf
+getRight	huffman.h	/^        Huffnode* getRight() const {return right;}$/;"	f	class:Huffinner
+getRight	huffman.h	/^    Huffnode* getRight() const {return NULL;}$/;"	f	class:Huffleaf
+getRoot	huffman.cpp	/^        const Huffnode* getRoot() const {return root;}$/;"	f	class:Hufftree
+getRoot	huffman.h	/^        const Huffnode* getRoot() const {return root;}$/;"	f	class:Hufftree
+getSize	huffman.cpp	/^int Outputer::getSize() const {$/;"	f	class:Outputer
+greaterThan	huffman.cpp	/^        bool greaterThan(const Huffnode* h) const {return this->compValue() > h->compValue();}$/;"	f	class:Huffinner
+greaterThan	huffman.cpp	/^    bool greaterThan(const Huffnode* h) const {return this->ch > h->compValue();}$/;"	f	class:Huffleaf
+greaterThan	huffman.h	/^        bool greaterThan(const Huffnode* h) const {return this->compValue() > h->compValue();}$/;"	f	class:Huffinner
+greaterThan	huffman.h	/^    bool greaterThan(const Huffnode* h) const {return this->ch > h->compValue();}$/;"	f	class:Huffleaf
+heapComp	huffman.cpp	/^bool heapComp(pair<int, Huffnode*> p1, pair<int, Huffnode*> p2) {$/;"	f
+in	huffman.cpp	/^        ifstream in;$/;"	m	class:Inputer	file:
+in	huffman.h	/^        ifstream in;$/;"	m	class:Inputer
+isLeaf	huffman.cpp	/^        bool isLeaf() const {return false;}$/;"	f	class:Huffinner
+isLeaf	huffman.cpp	/^    bool isLeaf() const {return true;}$/;"	f	class:Huffleaf
+isLeaf	huffman.h	/^        bool isLeaf() const {return false;}$/;"	f	class:Huffinner
+isLeaf	huffman.h	/^    bool isLeaf() const {return true;}$/;"	f	class:Huffleaf
+left	huffman.cpp	/^        Huffnode* left;$/;"	m	class:Huffinner	file:
+left	huffman.h	/^        Huffnode* left;$/;"	m	class:Huffinner
+m	huffman.cpp	/^        map<char, int> m;$/;"	m	class:Inputer	file:
+m	huffman.h	/^        map<char, int> m;$/;"	m	class:Inputer
+main	huffman.cpp	/^int main(int argc, char* argv[]) {$/;"	f
+operator <<	huffman.cpp	/^ostream& operator<<(ostream& out, const Huffinner& h) {$/;"	f
+operator <<	huffman.cpp	/^ostream& operator<<(ostream& out, const Huffleaf& h) {$/;"	f
+operator <<	huffman.cpp	/^ostream& operator<<(ostream& out, const Huffnode& h) {$/;"	f
+operator <<	huffman.cpp	/^ostream& operator<<(ostream& out, const Hufftree& h) {$/;"	f
+operator >>	huffman.cpp	/^Inputer& Inputer::operator>>(char& ch) {$/;"	f	class:Inputer
+out	huffman.cpp	/^        stringstream out;$/;"	m	class:Outputer	file:
+out	huffman.h	/^        stringstream out;$/;"	m	class:Outputer
+print	huffman.cpp	/^ostream& Huffinner::print(ostream& out) const {$/;"	f	class:Huffinner
+print	huffman.cpp	/^ostream& Huffleaf::print(ostream& out) const {$/;"	f	class:Huffleaf
+right	huffman.cpp	/^        Huffnode* right;$/;"	m	class:Huffinner	file:
+right	huffman.h	/^        Huffnode* right;$/;"	m	class:Huffinner
+root	huffman.cpp	/^        Huffnode* root;$/;"	m	class:Hufftree	file:
+root	huffman.h	/^        Huffnode* root;$/;"	m	class:Hufftree
+size	huffman.cpp	/^        int size;$/;"	m	class:Outputer	file:
+size	huffman.h	/^        int size;$/;"	m	class:Outputer
+write	huffman.cpp	/^void Outputer::write(string bytes) {$/;"	f	class:Outputer
+writeHeader	huffman.cpp	/^void Outputer::writeHeader() {$/;"	f	class:Outputer
+~Huffinner	huffman.cpp	/^        ~Huffinner() {if(left) delete left; if(right) delete right;}$/;"	f	class:Huffinner
+~Huffinner	huffman.h	/^        ~Huffinner() {if(left) delete left; if(right) delete right;}$/;"	f	class:Huffinner
+~Huffnode	huffman.cpp	/^Huffnode::~Huffnode(){}$/;"	f	class:Huffnode
+~Hufftree	huffman.cpp	/^Hufftree::~Hufftree() {$/;"	f	class:Hufftree
+~Outputer	huffman.cpp	/^Outputer::~Outputer() {$/;"	f	class:Outputer

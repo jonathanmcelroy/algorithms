@@ -1,0 +1,65 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+Huffinner	reHuff.cpp	/^        Huffinner(Huffnode* l, Huffnode* r) : left(l), right(r) {}$/;"	f	class:Huffinner
+Huffinner	reHuff.cpp	/^class Huffinner : public Huffnode {$/;"	c	file:
+Huffleaf	reHuff.cpp	/^        Huffleaf(char c) :ch(c) {}$/;"	f	class:Huffleaf
+Huffleaf	reHuff.cpp	/^class Huffleaf : public Huffnode {$/;"	c	file:
+Huffnode	reHuff.cpp	/^class Huffnode {$/;"	c	file:
+Hufftree	reHuff.cpp	/^        Hufftree(const Hufftree& h) : root(h.root) {}$/;"	f	class:Hufftree
+Hufftree	reHuff.cpp	/^Hufftree::Hufftree(map<char, int> m) {$/;"	f	class:Hufftree
+Hufftree	reHuff.cpp	/^class Hufftree {$/;"	c	file:
+Inputer	reHuff.cpp	/^Inputer::Inputer(string source) : count(0) {$/;"	f	class:Inputer
+Inputer	reHuff.cpp	/^class Inputer {$/;"	c	file:
+MAGIC	reHuff.cpp	/^const int MAGIC = 200 + (200 << 8) + (200 << 16) + (200 << 24);$/;"	v
+Outputer	reHuff.cpp	/^Outputer::Outputer(string destination, map<char, int> m) : count(0), buffer('\\0'), freq(m), size(8+5*m.size()){$/;"	f	class:Outputer
+Outputer	reHuff.cpp	/^class Outputer {$/;"	c	file:
+USAGE	reHuff.cpp	/^const char USAGE[] = "USAGE: rehuff (-huff | -unhuff) source destination";$/;"	v
+buffer	reHuff.cpp	/^        char buffer;$/;"	m	class:Inputer	file:
+buffer	reHuff.cpp	/^        char buffer;$/;"	m	class:Outputer	file:
+ch	reHuff.cpp	/^        char ch;$/;"	m	class:Huffleaf	file:
+compValue	reHuff.cpp	/^        char compValue() const {return ch;}$/;"	f	class:Huffleaf
+compValue	reHuff.cpp	/^        char compValue() const {return left->compValue();}$/;"	f	class:Huffinner
+copy	reHuff.cpp	/^        Huffinner* copy() const {return new Huffinner(left->copy(), right->copy());}$/;"	f	class:Huffinner
+copy	reHuff.cpp	/^        Huffleaf* copy() const {return new Huffleaf(ch);}$/;"	f	class:Huffleaf
+count	reHuff.cpp	/^        int count;$/;"	m	class:Outputer	file:
+count	reHuff.cpp	/^        short count;$/;"	m	class:Inputer	file:
+decrypt	reHuff.cpp	/^bool decrypt(string source, string destination) {$/;"	f
+encrypt	reHuff.cpp	/^bool encrypt(string source, string destination) {$/;"	f
+file	reHuff.cpp	/^        ofstream file;$/;"	m	class:Outputer	file:
+flush	reHuff.cpp	/^void Outputer::flush() {$/;"	f	class:Outputer
+freq	reHuff.cpp	/^        map<char, int> freq;$/;"	m	class:Outputer	file:
+getHuffmanEncoding	reHuff.cpp	/^map<char, string> Huffinner::getHuffmanEncoding(const string& prefix) const {$/;"	f	class:Huffinner
+getHuffmanEncoding	reHuff.cpp	/^map<char, string> Huffleaf::getHuffmanEncoding(const string& prefix) const {$/;"	f	class:Huffleaf
+getLeft	reHuff.cpp	/^        Huffnode* getLeft() const {return NULL;}$/;"	f	class:Huffleaf
+getLeft	reHuff.cpp	/^        Huffnode* getLeft() const {return left;}$/;"	f	class:Huffinner
+getMap	reHuff.cpp	/^map<char, int> Inputer::getMap() {$/;"	f	class:Inputer
+getRight	reHuff.cpp	/^        Huffnode* getRight() const {return NULL;}$/;"	f	class:Huffleaf
+getRight	reHuff.cpp	/^        Huffnode* getRight() const {return right;}$/;"	f	class:Huffinner
+getRoot	reHuff.cpp	/^        const Huffnode* getRoot() const {return root;}$/;"	f	class:Hufftree
+getSize	reHuff.cpp	/^int Outputer::getSize() const {$/;"	f	class:Outputer
+greaterThan	reHuff.cpp	/^        bool greaterThan(const Huffnode* h) const {return this->ch > h->compValue();}$/;"	f	class:Huffleaf
+greaterThan	reHuff.cpp	/^        bool greaterThan(const Huffnode* h) const {return this->compValue() > h->compValue();}$/;"	f	class:Huffinner
+heapComp	reHuff.cpp	/^bool heapComp(pair<int, Huffnode*> p1, pair<int, Huffnode*> p2) {$/;"	f
+in	reHuff.cpp	/^        ifstream in;$/;"	m	class:Inputer	file:
+isLeaf	reHuff.cpp	/^        bool isLeaf() const {return false;}$/;"	f	class:Huffinner
+isLeaf	reHuff.cpp	/^        bool isLeaf() const {return true;}$/;"	f	class:Huffleaf
+left	reHuff.cpp	/^        Huffnode* left;$/;"	m	class:Huffinner	file:
+m	reHuff.cpp	/^        map<char, int> m;$/;"	m	class:Inputer	file:
+main	reHuff.cpp	/^int main(int argc, char* argv[]) {$/;"	f
+operator >>	reHuff.cpp	/^Inputer& Inputer::operator>>(char& ch) {$/;"	f	class:Inputer
+out	reHuff.cpp	/^        stringstream out;$/;"	m	class:Outputer	file:
+print	reHuff.cpp	/^ostream& Huffinner::print(ostream& out) const {$/;"	f	class:Huffinner
+print	reHuff.cpp	/^ostream& Huffleaf::print(ostream& out) const {$/;"	f	class:Huffleaf
+right	reHuff.cpp	/^        Huffnode* right;$/;"	m	class:Huffinner	file:
+root	reHuff.cpp	/^        Huffnode* root;$/;"	m	class:Hufftree	file:
+size	reHuff.cpp	/^        int size;$/;"	m	class:Outputer	file:
+write	reHuff.cpp	/^void Outputer::write(string bytes) {$/;"	f	class:Outputer
+writeHeader	reHuff.cpp	/^void Outputer::writeHeader() {$/;"	f	class:Outputer
+~Huffinner	reHuff.cpp	/^        ~Huffinner() {if(left) delete left; if(right) delete right;}$/;"	f	class:Huffinner
+~Huffnode	reHuff.cpp	/^Huffnode::~Huffnode(){}$/;"	f	class:Huffnode
+~Hufftree	reHuff.cpp	/^Hufftree::~Hufftree() {$/;"	f	class:Hufftree
+~Outputer	reHuff.cpp	/^Outputer::~Outputer() {$/;"	f	class:Outputer

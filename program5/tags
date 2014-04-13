@@ -1,0 +1,25 @@
+/*******************************************************************************
+ Filename:      tags
+ Author:        Jonathan McElroy
+ Description:   TODO: Finish Description
+
+ Date Modified: 04/02/2014
+   - Created
+*******************************************************************************/
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+MAX_STARS	galacticBonding.cpp	/^const int MAX_STARS = 1000;$/;"	v
+countSets	galacticBonding.cpp	/^        int countSets(int N){$/;"	f	class:disjointSet
+disjointSet	galacticBonding.cpp	/^        disjointSet(){$/;"	f	class:disjointSet
+disjointSet	galacticBonding.cpp	/^class disjointSet{$/;"	c	file:
+distSqr	galacticBonding.cpp	/^double distSqr(pair<double, double> p1, pair<double, double> p2) {$/;"	f
+findSet	galacticBonding.cpp	/^        int findSet(int i){$/;"	f	class:disjointSet
+initSet	galacticBonding.cpp	/^        void initSet(int N ){$/;"	f	class:disjointSet
+isSameSet	galacticBonding.cpp	/^        bool isSameSet(int i, int j){$/;"	f	class:disjointSet
+main	galacticBonding.cpp	/^int main() {$/;"	f
+pset	galacticBonding.cpp	/^        vector<int> pset;$/;"	m	class:disjointSet	file:
+unionSet	galacticBonding.cpp	/^        void unionSet(int i, int j){$/;"	f	class:disjointSet

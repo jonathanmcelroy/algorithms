@@ -1,0 +1,73 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+Graph	c.cpp	/^    Graph(int length) {$/;"	f	class:Graph
+Graph	c.cpp	/^class Graph {$/;"	c	file:
+H_H	h.h	2;"	d
+INF	c.cpp	/^const int INF = 2000000000;$/;"	v
+INF	f.cpp	/^const int INF = 2000000000;$/;"	v
+INF	h.cpp	/^const int INF = 2000000000;$/;"	v
+INF	h.py	/^INF = float('inf')$/;"	v
+Node	c.cpp	/^    Node() {$/;"	f	struct:Node
+Node	c.cpp	/^struct Node {$/;"	s	file:
+addCar	c.cpp	/^    void addCar(int node) {$/;"	f	class:Graph
+addEdge	c.cpp	/^    void addEdge(int node, int node2, int time) {$/;"	f	class:Graph
+battPerChip	f.py	/^    battPerChip = 2$/;"	v
+batteries	f.py	/^    batteries = [1, 1, 1, 3, 4, 6, 9, 12, 15, 18, 21, 24]$/;"	v
+canMakeRun	h.cpp	/^int canMakeRun(list<int> L) {$/;"	f
+canMakeRun	h.py	/^def canMakeRun(L):$/;"	f
+cars	c.cpp	/^        vector<int> cars;$/;"	m	class:Graph	file:
+compNodeTime	c.cpp	/^bool compNodeTime(const Node n1, const Node n2) {$/;"	f
+diff	f.py	/^    diff = [batteries[i+1]-batteries[i] for i in range(len(batteries)-1)]$/;"	v
+edges	c.cpp	/^    vector<pair<int, int> > edges;$/;"	m	struct:Node	file:
+findPath	c.cpp	/^    bool findPath(const vector<vector<int> > rGraph, vector<int>& path) {$/;"	f	class:Graph
+findPath	c.cpp	/^    bool findPath(const vector<vector<int> > rGraph, vector<int>& path, int current, vector<bool> visited) {$/;"	f	class:Graph
+found	f.py	/^                        found = True$/;"	v
+found	f.py	/^                found = False$/;"	v
+getList	h.cpp	/^list<int> getList(int L[], pair<int, int> left, pair<int, int> right) {$/;"	f
+getList	h.py	/^def getList(L, left, right):$/;"	f
+graph	c.cpp	/^        vector<vector<int> > graph;$/;"	m	class:Graph	file:
+graphList	c.cpp	/^        vector<list<int> > graphList;$/;"	m	class:Graph	file:
+graphTime	c.cpp	/^        vector<vector<int> > graphTime;$/;"	m	class:Graph	file:
+graphTimeList	c.cpp	/^        vector<list<int> > graphTimeList;$/;"	m	class:Graph	file:
+groupBackward	h.cpp	/^iter groupBackward(int L[], const int size, list<pair<int, int> >& runs) {$/;"	f
+groupDirection	h.py	/^def groupDirection(L, runs, direction, debug = False):$/;"	f
+groupForward	h.cpp	/^iter groupForward(int L[], const int size, list<pair<int, int> >& runs) {$/;"	f
+id	c.cpp	/^    static int id;$/;"	m	struct:Node	file:
+indexes	f.py	/^    indexes = [0]$/;"	v
+iter	h.cpp	/^typedef list<pair<int, int> >::iterator iter;$/;"	t	file:
+iter	h.h	/^typedef list<pair<int, int> >::iterator iter;$/;"	t
+joinRun	h.cpp	/^void joinRun(list<pair<int, int> >& runs, iter& from, iter& to) {$/;"	f
+lengthToRoot	c.cpp	/^    int lengthToRoot;$/;"	m	struct:Node	file:
+machines	f.py	/^    machines = 3$/;"	v
+main	c.cpp	/^int main() {$/;"	f
+main	cinputcreator.py	/^def main():$/;"	f
+main	d.cpp	/^int main() {$/;"	f
+main	f.cpp	/^int main() {$/;"	f
+main	h.cpp	/^int main() {$/;"	f
+maxDiff	f.py	/^            maxDiff = minDiff$/;"	v
+maxDiff	f.py	/^    maxDiff = diff[0]$/;"	v
+maxFlow	c.cpp	/^    int maxFlow(list<int> nodes) {$/;"	f	class:Graph
+minDiff	f.py	/^                    minDiff = diff[index]$/;"	v
+minDiff	f.py	/^        minDiff = float('inf')$/;"	v
+minIndex	f.py	/^                    minIndex = index$/;"	v
+nodesLengthToRoot	c.cpp	/^        vector<int> nodesLengthToRoot;$/;"	m	class:Graph	file:
+operator <<	c.cpp	/^ostream& operator<<(ostream& out, const Node n) {$/;"	f
+printArray	h.cpp	/^void printArray(const int L[], const int size) {$/;"	f
+printArray	h.h	/^void printArray(const int L[], const int size) {$/;"	f
+printCurrentIndex	h.cpp	/^void printCurrentIndex(list<pair<int, int> >& runs, iter index){$/;"	f
+printCurrentIndex	h.h	/^void printCurrentIndex(list<pair<int, int> >& runs, iter index){$/;"	f
+printList	h.py	/^def printList(L, runs):$/;"	f
+printRun	h.py	/^def printRun(L, left, right):$/;"	f
+printRuns	h.cpp	/^void printRuns(const list<pair<int, int> >& runs){$/;"	f
+printRuns	h.h	/^void printRuns(const list<pair<int, int> >& runs){$/;"	f
+solve	c.cpp	/^    int solve() {$/;"	f	class:Graph
+solve	h.cpp	/^int solve(int L[], const int size) {$/;"	f
+solve	h.py	/^def solve(L, debug = False):$/;"	f
+solveRecurse	h.py	/^def solveRecurse(L, runs, debug = False):$/;"	f
+solveRecursive	h.cpp	/^int solveRecursive(int L[], const int size, list<pair<int, int> >& runs, const int sizeRuns) {$/;"	f
+solveSingleSet	h.cpp	/^int solveSingleSet(int L[], const int begin, const int end) {$/;"	f
+solveSingleSet	h.py	/^def solveSingleSet(L, debug = False):$/;"	f
