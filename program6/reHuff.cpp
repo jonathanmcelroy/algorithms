@@ -421,7 +421,6 @@ bool encrypt(string source, string destination) {
     // the file
     if (out.getSize() <= size) {
         out.flush();
-
     }
     else {
         // don't write to the file
