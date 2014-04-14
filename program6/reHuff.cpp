@@ -338,7 +338,7 @@ Inputer::Inputer(string source) : count(0) {
     int magic;
     in.read((char*)(&magic), sizeof(magic));
     if (magic != MAGIC) {
-        cout << "Input file was not Huffman Encoded" << endl;
+        cout << "Input file was not Huffman Endoded" << endl;
         exit(1);
     }
 
