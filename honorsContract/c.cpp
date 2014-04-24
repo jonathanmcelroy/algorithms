@@ -5,6 +5,7 @@
 #include <algorithm>
 #include <list>
 #include <time.h>
+#include <unistd.h>
 
 #include "jm_ostream.h"
 #include "jm_consts.h"
@@ -13,29 +14,29 @@ using namespace std;
 //const int INF = 2000000000;
 
 class Graph {
-    private:
-        int length;
-        vector<int> nodesLengthToRoot;
-        vector<vector<int> > graphTime;
-        vector<vector<int> > graph;
-        vector<int> cars;
+private:
+    int length;
+    vector<int> nodesLengthToRoot;
+    vector<vector<int> > graphTime;
+    vector<vector<int> > graph;
+    vector<int> cars;
 
-        //vector<list<int> > graphTimeList;
-        //vector<list<int> > graphList;
+    //vector<list<int> > graphTimeList;
+    //vector<list<int> > graphList;
 
 public:
     Graph(int length) {
-        this->length = length;
+        this->length = length + 1;
         // make the graph have length+1 nodes, including the source, which is the first node
-        this->graphTime.resize(length+1);
-        this->graph.resize(length+1);
-        this->nodesLengthToRoot.resize(length+1, INF);
-        this->cars.resize(length+1, 0);
-        for(int i=0; i<length+1; i++) {
+        this->graphTime.resize(length + 1);
+        this->graph.resize(length + 1);
+        this->nodesLengthToRoot.resize(length + 1, INF);
+        this->cars.resize(length + 1, 0);
+        for(int i = 0; i < length + 1; i++) {
             // initialize the time for each edge to be INF
-            this->graphTime[i] = vector<int>(length+1, INF);
+            this->graphTime[i] = vector<int>(length + 1, INF);
             // make 0 edges between the nodes
-            this->graph[i] = vector<int>(length+1, 0);
+            this->graph[i] = vector<int>(length + 1, 0);
         }
     }
 
@@ -43,12 +44,12 @@ public:
         // add the edge to both nodes
 
         // if we have not assigned this edge yet or the new time is smaller than the old one
-        if (this->graph[node][node2] == 0 or time < this->graphTime[node][node2]) {
+        if(this->graph[node][node2] == 0 or time < this->graphTime[node][node2]) {
             this->graphTime[node][node2] = this->graphTime[node2][node] = time;
             this->graph[node][node2] = this->graph[node2][node] = 1;
         }
         // if we have assigned this edge and the times of the edges are the same
-        else if(this->graphTime[node][node2] == time){
+        else if(this->graphTime[node][node2] == time) {
             this->graph[node][node2]++;
             this->graph[node2][node]++;
         }
@@ -74,6 +75,8 @@ public:
         while(!pq.empty()) {
             // remove the node with the minimum time to the root
             pair<int, int> timeNode = pq.front();
+
+
             pop_heap(pq.begin(), pq.end(), greater<pair<int, int> >());
             pq.pop_back();
 
@@ -82,16 +85,16 @@ public:
             int node = timeNode.second;
 
             // if we have not explored this node; this means this is one of the shortest paths
-            if (this->nodesLengthToRoot[node] == INF) {
+            if(this->nodesLengthToRoot[node] == INF) {
                 // set the length to the root
                 this->nodesLengthToRoot[node] = time;
 
-                // for each node
-                for(int i=0; i<this->length; i++) {
+                // for each node (skipping the imaginary "source" node and the sink
+                for(int i = 2; i < this->length; i++) {
                     // if there is a connection from another node to the current node
                     if(this->graph[i][node] > 0) {
                         // add the other node with a total time of this node's time plus the edge
-                        pq.push_back(make_pair(time+graphTime[i][node], i));
+                        pq.push_back(make_pair(time + graphTime[i][node], i));
                         push_heap(pq.begin(), pq.end(), greater<pair<int, int> >());
 
                         // remove the connection from this node to the other
@@ -103,7 +106,7 @@ public:
                     // if there is a connection from this node to the other
                     // node and the edge plus the other time is greater than
                     // the current time, remove it
-                    else if(this->graph[node][i] > 0 and this->graphTime[node][i]+this->nodesLengthToRoot[i] > time) {
+                    else if(this->graph[node][i] > 0 and this->graphTime[node][i] + this->nodesLengthToRoot[i] > time) {
                         this->graphTime[node][i] = INF;
                         this->graph[node][i] = 0;
                     }
@@ -112,13 +115,13 @@ public:
                 // if node time to root != current time
                 if(time != currentTime) {
                     // solve maximum flow problem with cars in current nodes
-                    //value += this->maxFlow(currentNodes);
+                    value += this->maxFlow(currentNodes);
                     currentNodes.clear();
                     currentTime = time;
                 }
                 currentNodes.push_back(node);
             }
-            else if (this->nodesLengthToRoot[node] > time) {
+            else if(this->nodesLengthToRoot[node] > time) {
                 exit(1);
             }
         }
@@ -133,13 +136,13 @@ public:
         // then solve the max flow problem
         int value = 0;
         bool anyCars = false;
-        for(auto i=nodes.begin(); i!=nodes.end(); i++) {
+        for(auto i = nodes.begin(); i != nodes.end(); i++) {
             if((this->graph[0][*i] = cars[*i])) {
                 anyCars = true;
             }
         }
         // path represents a path from the source to the sink. Every index points to the next node on the path, or to itself
-        if (anyCars) {
+        if(anyCars) {
             vector<int> path(this->length);
             while(this->findPath(0, 1, path)) {
                 int flow = INF;
@@ -159,7 +162,7 @@ public:
 
     bool findPath(int source, int sink, vector<int>& path) {
         // fills path with the path from node source to node sink
-        for(unsigned int i=0; i<path.size(); i++) {
+        for(unsigned int i = 0; i < path.size(); i++) {
             path[i] = i;
         }
         vector<bool> visited(this->length, false);
@@ -174,7 +177,7 @@ public:
             return true;
         }
         // we start at 2 because 0 has already been visited and 1 has been checked
-        for(int i=0; i < this->length; i++) {
+        for(int i = 0; i < this->length; i++) {
             if(visited[i] == false and this->graph[current][i] > 0) {
                 path[current] = i;
                 if(findPath(i, sink, path, visited)) {
@@ -211,26 +214,31 @@ struct Info {
     list<Info>::iterator reverseEdge;
 };
 
-class GraphList {
-    private:
-        int length;
-        vector<int> nodesLengthToRoot;
-        vector<int> cars;
+ostream& operator<<(ostream& out, Info info) {
+    return out << "{" << info.node1 << ", " << info.node2 << ": " << info.time << ", " << info.weight << "}";
+}
 
-        // vector of list of (node, time, weight, otherEdge, graphEdge, graphOtherEdge)
-        vector<list<Info> > graphList;
+class GraphList {
+private:
+    int length;
+    vector<int> nodesLengthToRoot;
+    vector<int> cars;
+
+    // vector of list of (this node, other node, time, weight, reverse edge)
+    vector<list<Info> > graphList;
 
 public:
     GraphList(int length) {
-        this->length = length;
+        this->length = length + 1;
         // make the graph have length+1 nodes, including the source, which is the first node
-        this->nodesLengthToRoot.resize(length+1, INF);
-        this->cars.resize(length+1, 0);
+        this->graphList.resize(length + 1);
+        this->nodesLengthToRoot.resize(length + 1, INF);
+        this->cars.resize(length + 1, 0);
     }
 
     list<Info>::iterator findEdge(int node1, int node2) {
         auto index = this->graphList[node1].begin();
-        for(; index!=this->graphList[node1].end(); index++) {
+        for(; index != this->graphList[node1].end(); index++) {
             if(index->node2 == node2) {
                 break;
             }
@@ -244,9 +252,9 @@ public:
         // look for the node edge
         auto edge = this->findEdge(node1, node2);
         // if we find it
-        if (edge!=this->graphList[node1].end()) {
+        if(edge != this->graphList[node1].end()) {
             // if the new time is smaller than the old one
-            if (time < edge->time) {
+            if(time < edge->time) {
                 // change my time and weight
                 edge->time = time;
                 edge->weight = 1;
@@ -279,7 +287,7 @@ public:
     }
 
     int solve() {
-
+        cout << "Starting" << endl;
         int value = 0;
 
         // pq = [(dist to root, node num)]
@@ -301,8 +309,11 @@ public:
             int time = timeNode.first;
             int node1 = timeNode.second;
 
+            cout << "Checking node " << node1 << " with time " << time << endl;
+
             // if we have not explored this node; this means this is one of the shortest paths
-            if (this->nodesLengthToRoot[node1] == INF) {
+            if(this->nodesLengthToRoot[node1] == INF) {
+                cout << "We have not seen this node yet" << endl;
                 // set the length to the root
                 this->nodesLengthToRoot[node1] = time;
 
@@ -311,8 +322,9 @@ public:
 
                     // if there is a connection from another node to the current node
                     // add the other node with a total time of this node's time plus the edge
-                    if (edge->weight > 0) {
-                        pq.push_back(make_pair(time+edge->time, edge->node2));
+                    if(edge->weight > 0) {
+                        cout << "There is a connection: " << *edge << endl;
+                        pq.push_back(make_pair(time + edge->time, edge->node2));
                         push_heap(pq.begin(), pq.end(), greater<pair<int, int> >());
 
                         // remove the connection from this node to the other
@@ -324,7 +336,7 @@ public:
                     // if there is a connection from this node to the other
                     // node and the edge plus the other time is greater than
                     // the current time, remove it
-                    else if(edge->weight > 0 and edge->time+this->nodesLengthToRoot[node1] > time) {
+                    else if(edge->weight > 0 and edge->time + this->nodesLengthToRoot[node1] > time) {
                         auto node2 = edge->node2;
                         auto otherIter = edge->reverseEdge;
                         this->graphList[node1].erase(edge);
@@ -334,6 +346,7 @@ public:
 
                 // if node time to root != current time
                 if(time != currentTime) {
+                    cout << "Time has changed" << endl;
                     // solve maximum flow problem with cars in current nodes
                     value += this->maxFlow(currentNodes);
                     currentNodes.clear();
@@ -341,22 +354,25 @@ public:
                 }
                 currentNodes.push_back(node1);
             }
-            else if (this->nodesLengthToRoot[node1] > time) {
+            else if(this->nodesLengthToRoot[node1] > time) {
                 exit(1);
             }
+            cout << endl;
         }
         value += this->maxFlow(currentNodes);
         return value;
     }
 
     int maxFlow(list<int> nodes) {
+        cout << "Solving maxflow" << endl;
         // using the edge weights, we will solve the max flow over the whole graph, going from node 0 to node 1
         //
         // first connect all the nodes with cars to the source node with an edge weight equal to the number of cars
         // then solve the max flow problem
         int value = 0;
         bool anyCars = false;
-        for(auto i=nodes.begin(); i!=nodes.end(); i++) {
+        cout << "Checking for cars" << endl;
+        for(auto i = nodes.begin(); i != nodes.end(); i++) {
             if(cars[*i]) {
                 anyCars = true;
                 Info edgeInfo = {1, *i, 1, cars[*i], this->graphList[*i].end()};
@@ -369,9 +385,11 @@ public:
                 edgeIter->reverseEdge = --this->graphList[*i].end();
             }
         }
+        cout << "Finished checking for cars: " << anyCars << endl;
         // path represents a path from the source to the sink. Every index points to the next node on the path, or to itself
-        list<list<Info>::iterator> edges;
-        if (anyCars) {
+        if(anyCars) {
+            cout << "There are cars" << endl;
+            list<list<Info>::iterator> edges;
             vector<int> path(this->length);
             while(this->findPath(0, 1, path)) {
                 int flow = INF;
@@ -385,15 +403,16 @@ public:
                     (*edge)->reverseEdge->weight += flow;
                 }
                 value += flow;
+                edges.clear();
             }
         }
-        resetGraph(edges);
+        resetGraph();
         return value;
     }
 
     bool findPath(int source, int sink, vector<int>& path) {
         // fills path with the path from node source to node sink
-        for(unsigned int i=0; i<path.size(); i++) {
+        for(unsigned int i = 0; i < path.size(); i++) {
             path[i] = i;
         }
         vector<bool> visited(this->length, false);
@@ -404,13 +423,13 @@ public:
         // fill path with the path from current to node sink
         visited[current] = true;
         for(auto edge = graphList[current].begin(); edge != graphList[current].end(); edge++) {
-            if (edge->node2 == sink) {
+            if(edge->node2 == sink) {
                 path[current] = sink;
                 return true;
             }
-            else if (visited[edge->node2] == false and edge->weight > 0) {
+            else if(visited[edge->node2] == false and edge->weight > 0) {
                 path[current] = edge->node1;
-                if(findPath(edge->node1, sink, path, visited)) {
+                if(findPath(edge->node2, sink, path, visited)) {
                     return true;
                 }
             }
@@ -419,20 +438,23 @@ public:
         return false;
     }
 
-    void resetGraph(list<list<Info>::iterator> edges) {
+    void resetGraph() {
         // this will find all paths from the sink to the source and reverse them
+        list<list<Info>::iterator> edges;
         vector<int> path(this->length);
         while(this->findPath(1, 0, path)) {
             int flow = INF;
             for(int node = 1; node != 0; node = path[node]) {
-                flow = min(flow, this->graph[node][path[node]]);
+                auto edge = findEdge(node, path[node]);
+                flow = min(flow, edge->weight);
+                edges.push_back(edge);
             }
-            for(int node = 1; node != 0; node = path[node]) {
-                this->graph[node][path[node]] -= flow;
-                this->graph[path[node]][node] += flow;
+            for(auto edge = edges.begin(); edge != edges.end(); edge++) {
+                (*edge)->weight -= flow;
+                (*edge)->reverseEdge->weight += flow;
             }
         }
-        this->graph[0] = vector<int>(this->length, 0);
+        this->graphList[0].clear();
     }
 };
 
@@ -443,26 +465,26 @@ int main() {
     while(cin >> nodes) {
         int edges, cars;
         cin >> edges >> cars;
-        Graph graph(nodes);
+        GraphList graph(nodes);
 
         // get the list of edges. We will only keep the edges that give min
         // distances
         int nodenum1, nodenum2, time;
-        for(int i=0; i<edges;i++) {
+        for(int i = 0; i < edges; i++) {
             cin >> nodenum1 >> nodenum2 >> time;
             graph.addEdge(nodenum1, nodenum2, time);
         }
 
         // get the nodes the cars are in
         int car;
-        for(int i=0; i<cars; i++) {
+        for(int i = 0; i < cars; i++) {
             cin >> car;
             graph.addCar(car);
         }
 
         cout << graph.solve() << endl;
     }
-    cout << time(NULL)-start << endl;
+    cout << time(NULL) - start << endl;
 
     return 0;
 }

@@ -1,0 +1,80 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+Clear	GLUT_Plotter.cpp	/^void GLUT_Plotter::Clear(){$/;"	f	class:GLUT_Plotter
+Click	GLUT_Plotter.h	/^struct Click{$/;"	s
+Draw	GLUT_Plotter.cpp	/^void GLUT_Plotter::Draw(void){$/;"	f	class:GLUT_Plotter
+GLUT_PLOTTER_H_	GLUT_Plotter.h	10;"	d
+GLUT_Plotter	GLUT_Plotter.cpp	/^GLUT_Plotter::GLUT_Plotter(int w, int h){$/;"	f	class:GLUT_Plotter
+GLUT_Plotter	GLUT_Plotter.h	/^class GLUT_Plotter{$/;"	c
+GroupProject	GroupProject.cpp	/^GroupProject::GroupProject(GLUT_Plotter* g){$/;"	f	class:GroupProject
+GroupProject	GroupProject.h	/^class GroupProject{$/;"	c
+GroupProject_H_	GroupProject.h	10;"	d
+MATRIXNUMBER	Matrix.h	/^const int MATRIXNUMBER = 4;$/;"	v
+MATRIX_H	Matrix.h	2;"	d
+MainLoop	GLUT_Plotter.cpp	/^void GLUT_Plotter::MainLoop(){$/;"	f	class:GLUT_Plotter
+Matrix	Matrix.cpp	/^Matrix::Matrix() {$/;"	f	class:Matrix
+Matrix	Matrix.cpp	/^Matrix::Matrix(const Matrix& m) {$/;"	f	class:Matrix
+Matrix	Matrix.cpp	/^Matrix::Matrix(int size) {$/;"	f	class:Matrix
+Matrix	Matrix.cpp	/^Matrix::Matrix(vector<vector<int> > data) {$/;"	f	class:Matrix
+Matrix	Matrix.h	/^class Matrix {$/;"	c
+NEINDEX	Matrix.h	/^const int NEINDEX = 1;$/;"	v
+NWINDEX	Matrix.h	/^const int NWINDEX = 0;$/;"	v
+Play	GroupProject.cpp	/^void GroupProject::Play(void){$/;"	f	class:GroupProject
+Player	GroupProjectDriver.cpp	/^void Player(void){$/;"	f
+RegisterDisplayFunc	GLUT_Plotter.cpp	/^void GLUT_Plotter::RegisterDisplayFunc(void (*func)(void)){$/;"	f	class:GLUT_Plotter
+RegisterIdleFunc	GLUT_Plotter.cpp	/^void GLUT_Plotter::RegisterIdleFunc(void (*func)(void)){$/;"	f	class:GLUT_Plotter
+RegisterKeyboardFunc	GLUT_Plotter.cpp	/^void GLUT_Plotter::RegisterKeyboardFunc(void (*func)(unsigned char key, int x, int y)){$/;"	f	class:GLUT_Plotter
+RegisterMouseFunc	GLUT_Plotter.cpp	/^void GLUT_Plotter::RegisterMouseFunc(void (*func)(int button, int state,int x, int y)){$/;"	f	class:GLUT_Plotter
+RegisterSpecialKeyboardFunc	GLUT_Plotter.cpp	/^void GLUT_Plotter::RegisterSpecialKeyboardFunc(void (*func)(int key, int x, int y)){$/;"	f	class:GLUT_Plotter
+SEINDEX	Matrix.h	/^const int SEINDEX = 3;$/;"	v
+STRASSENALGORITHM_H	strassenAlgorithm.h	2;"	d
+SWINDEX	Matrix.h	/^const int SWINDEX = 2;$/;"	v
+SpecialKeyboardFunction	GLUT_Plotter.cpp	/^void SpecialKeyboardFunction(int k, int x, int y) {$/;"	f
+addClick	GLUT_Plotter.cpp	/^void GLUT_Plotter::addClick(Click c){$/;"	f	class:GLUT_Plotter
+addKeyHit	GLUT_Plotter.h	/^    void addKeyHit(int key){keyboardQueue.push(key);}$/;"	f	class:GLUT_Plotter
+app	GroupProjectDriver.cpp	/^GroupProject* app;$/;"	v
+buffer	GLUT_Plotter.h	/^    char *buffer;$/;"	m	class:GLUT_Plotter
+button	GLUT_Plotter.h	/^    int button;$/;"	m	struct:Click
+callBacks	GLUT_Plotter.cpp	/^void GLUT_Plotter::callBacks(){$/;"	f	class:GLUT_Plotter
+click	GLUT_Plotter.h	/^    bool click(){return mouseQueue.size()>0;}$/;"	f	class:GLUT_Plotter
+color	GLUT_Plotter.h	/^    unsigned int color;$/;"	m	class:GLUT_Plotter
+combine	Matrix.cpp	/^Matrix Matrix::combine(const Matrix mNW, const Matrix mNE, const Matrix mSW, const Matrix mSE) {$/;"	f	class:Matrix
+data	Matrix.h	/^        vector<vector<int> > data;$/;"	m	class:Matrix
+drawFunction	GLUT_Plotter.cpp	/^void drawFunction(void){$/;"	f
+g	GLUT_Plotter.cpp	/^GLUT_Plotter* g;$/;"	v
+g	GroupProject.h	/^    GLUT_Plotter *g;$/;"	m	class:GroupProject
+get	Matrix.cpp	/^int Matrix::get(int row, int col) const {$/;"	f	class:Matrix
+getBuffer	GLUT_Plotter.cpp	/^char* GLUT_Plotter::getBuffer(){$/;"	f	class:GLUT_Plotter
+getClick	GLUT_Plotter.cpp	/^Click GLUT_Plotter::getClick(){$/;"	f	class:GLUT_Plotter
+getColor	GLUT_Plotter.cpp	/^unsigned int GLUT_Plotter::getColor(){$/;"	f	class:GLUT_Plotter
+getHeight	GLUT_Plotter.cpp	/^int GLUT_Plotter::getHeight(){$/;"	f	class:GLUT_Plotter
+getKey	GLUT_Plotter.cpp	/^unsigned char GLUT_Plotter::getKey(){$/;"	f	class:GLUT_Plotter
+getSize	Matrix.cpp	/^int Matrix::getSize() const {$/;"	f	class:Matrix
+getWidth	GLUT_Plotter.cpp	/^int GLUT_Plotter::getWidth(){$/;"	f	class:GLUT_Plotter
+height	GLUT_Plotter.h	/^    int height;$/;"	m	class:GLUT_Plotter
+init	GLUT_Plotter.cpp	/^void GLUT_Plotter::init(){$/;"	f	class:GLUT_Plotter
+init	GLUT_Plotter.cpp	/^void GLUT_Plotter::init(int *argc, char **argv){$/;"	f	class:GLUT_Plotter
+kbhit	GLUT_Plotter.h	/^    bool kbhit(){return keyboardQueue.size()>0;}$/;"	f	class:GLUT_Plotter
+keyboardFunction	GLUT_Plotter.cpp	/^void keyboardFunction(unsigned char k, int x, int y) {$/;"	f
+keyboardQueue	GLUT_Plotter.h	/^    queue<int> keyboardQueue;$/;"	m	class:GLUT_Plotter
+main	GroupProjectDriver.cpp	/^int main() {$/;"	f
+mouseFunction	GLUT_Plotter.cpp	/^void mouseFunction(int button, int state,int x, int y){$/;"	f
+mouseQueue	GLUT_Plotter.h	/^    queue<Click> mouseQueue;$/;"	m	class:GLUT_Plotter
+operator +	Matrix.cpp	/^Matrix Matrix::operator+(const Matrix& m) const {$/;"	f	class:Matrix
+operator -	Matrix.cpp	/^Matrix Matrix::operator-(const Matrix& m) const {$/;"	f	class:Matrix
+operator <<	GroupProjectDriver.cpp	/^ostream& operator<<(ostream& out, const Matrix& m) {$/;"	f
+plot	GLUT_Plotter.cpp	/^void GLUT_Plotter::plot(int x, int y){$/;"	f	class:GLUT_Plotter
+set	Matrix.cpp	/^void Matrix::set(int row, int col, int value) {$/;"	f	class:Matrix
+setColor	GLUT_Plotter.cpp	/^void GLUT_Plotter::setColor(unsigned int c){$/;"	f	class:GLUT_Plotter
+setpixel	GLUT_Plotter.cpp	/^void setpixel(char *buf, int x, int y, int r, int g, int b, int width) {$/;"	f
+split	Matrix.cpp	/^vector<Matrix> Matrix::split(){$/;"	f	class:Matrix
+state	GLUT_Plotter.h	/^    int state;$/;"	m	struct:Click
+strassen	strassenAlgorithm.cpp	/^Matrix strassen(Matrix m1, Matrix m2) {$/;"	f
+width	GLUT_Plotter.h	/^    int width;$/;"	m	class:GLUT_Plotter
+x	GLUT_Plotter.h	/^    int x;$/;"	m	struct:Click
+y	GLUT_Plotter.h	/^    int y;$/;"	m	struct:Click
+~GLUT_Plotter	GLUT_Plotter.h	/^    ~GLUT_Plotter(){;}$/;"	f	class:GLUT_Plotter

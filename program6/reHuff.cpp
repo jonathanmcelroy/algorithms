@@ -101,6 +101,7 @@ Assumptions:
     Assume the user will not feed a file that is not a Huffman encoded file
         that contains the magic number at the beginning
 ******************************************************************************/
+
 #include <fstream>
 #include <iostream>
 #include <string.h>

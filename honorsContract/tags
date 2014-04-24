@@ -4,20 +4,15 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.9~svn20110310	//
-BOTH	c.cpp	/^enum Dir {TOSELF, TOOTHER, BOTH};$/;"	e	enum:Dir	file:
-Dir	c.cpp	/^enum Dir {TOSELF, TOOTHER, BOTH};$/;"	g	file:
 Graph	c.cpp	/^    Graph(int length) {$/;"	f	class:Graph
 Graph	c.cpp	/^class Graph {$/;"	c	file:
 GraphList	c.cpp	/^    GraphList(int length) {$/;"	f	class:GraphList
 GraphList	c.cpp	/^class GraphList {$/;"	c	file:
 H_H	h.h	2;"	d
-INF	c.cpp	/^const int INF = 2000000000;$/;"	v
 INF	f.cpp	/^const int INF = 2000000000;$/;"	v
 INF	h.cpp	/^const int INF = 2000000000;$/;"	v
 INF	h.py	/^INF = float('inf')$/;"	v
 Info	c.cpp	/^struct Info {$/;"	s	file:
-TOOTHER	c.cpp	/^enum Dir {TOSELF, TOOTHER, BOTH};$/;"	e	enum:Dir	file:
-TOSELF	c.cpp	/^enum Dir {TOSELF, TOOTHER, BOTH};$/;"	e	enum:Dir	file:
 addCar	c.cpp	/^    void addCar(int node) {$/;"	f	class:Graph
 addCar	c.cpp	/^    void addCar(int node) {$/;"	f	class:GraphList
 addEdge	c.cpp	/^    void addEdge(int node, int node2, int time) {$/;"	f	class:Graph
@@ -26,10 +21,9 @@ battPerChip	f.py	/^    battPerChip = 2$/;"	v
 batteries	f.py	/^    batteries = [1, 1, 1, 3, 4, 6, 9, 12, 15, 18, 21, 24]$/;"	v
 canMakeRun	h.cpp	/^int canMakeRun(list<int> L) {$/;"	f
 canMakeRun	h.py	/^def canMakeRun(L):$/;"	f
-cars	c.cpp	/^        vector<int> cars;$/;"	m	class:Graph	file:
-cars	c.cpp	/^        vector<int> cars;$/;"	m	class:GraphList	file:
+cars	c.cpp	/^    vector<int> cars;$/;"	m	class:Graph	file:
+cars	c.cpp	/^    vector<int> cars;$/;"	m	class:GraphList	file:
 diff	f.py	/^    diff = [batteries[i+1]-batteries[i] for i in range(len(batteries)-1)]$/;"	v
-direction	c.cpp	/^    Dir direction;$/;"	m	struct:Info	file:
 findEdge	c.cpp	/^    list<Info>::iterator findEdge(int node1, int node2) {$/;"	f	class:GraphList
 findPath	c.cpp	/^    bool findPath(int current, int sink, vector<int>& path, vector<bool>& visited) {$/;"	f	class:Graph
 findPath	c.cpp	/^    bool findPath(int current, int sink, vector<int>& path, vector<bool>& visited) {$/;"	f	class:GraphList
@@ -39,9 +33,9 @@ found	f.py	/^                        found = True$/;"	v
 found	f.py	/^                found = False$/;"	v
 getList	h.cpp	/^list<int> getList(int L[], pair<int, int> left, pair<int, int> right) {$/;"	f
 getList	h.py	/^def getList(L, left, right):$/;"	f
-graph	c.cpp	/^        vector<vector<int> > graph;$/;"	m	class:Graph	file:
-graphList	c.cpp	/^        vector<list<Info> > graphList;$/;"	m	class:GraphList	file:
-graphTime	c.cpp	/^        vector<vector<int> > graphTime;$/;"	m	class:Graph	file:
+graph	c.cpp	/^    vector<vector<int> > graph;$/;"	m	class:Graph	file:
+graphList	c.cpp	/^    vector<list<Info> > graphList;$/;"	m	class:GraphList	file:
+graphTime	c.cpp	/^    vector<vector<int> > graphTime;$/;"	m	class:Graph	file:
 groupBackward	h.cpp	/^iter groupBackward(int L[], const int size, list<pair<int, int> >& runs) {$/;"	f
 groupDirection	h.py	/^def groupDirection(L, runs, direction, debug = False):$/;"	f
 groupForward	h.cpp	/^iter groupForward(int L[], const int size, list<pair<int, int> >& runs) {$/;"	f
@@ -49,8 +43,8 @@ indexes	f.py	/^    indexes = [0]$/;"	v
 iter	h.cpp	/^typedef list<pair<int, int> >::iterator iter;$/;"	t	file:
 iter	h.h	/^typedef list<pair<int, int> >::iterator iter;$/;"	t
 joinRun	h.cpp	/^void joinRun(list<pair<int, int> >& runs, iter& from, iter& to) {$/;"	f
-length	c.cpp	/^        int length;$/;"	m	class:Graph	file:
-length	c.cpp	/^        int length;$/;"	m	class:GraphList	file:
+length	c.cpp	/^    int length;$/;"	m	class:Graph	file:
+length	c.cpp	/^    int length;$/;"	m	class:GraphList	file:
 machines	f.py	/^    machines = 3$/;"	v
 main	c.cpp	/^int main() {$/;"	f
 main	cinputcreator.py	/^def main():$/;"	f
@@ -66,8 +60,9 @@ minDiff	f.py	/^        minDiff = float('inf')$/;"	v
 minIndex	f.py	/^                    minIndex = index$/;"	v
 node1	c.cpp	/^    int node1;$/;"	m	struct:Info	file:
 node2	c.cpp	/^    int node2;$/;"	m	struct:Info	file:
-nodesLengthToRoot	c.cpp	/^        vector<int> nodesLengthToRoot;$/;"	m	class:Graph	file:
-nodesLengthToRoot	c.cpp	/^        vector<int> nodesLengthToRoot;$/;"	m	class:GraphList	file:
+nodesLengthToRoot	c.cpp	/^    vector<int> nodesLengthToRoot;$/;"	m	class:Graph	file:
+nodesLengthToRoot	c.cpp	/^    vector<int> nodesLengthToRoot;$/;"	m	class:GraphList	file:
+operator <<	c.cpp	/^ostream& operator<<(ostream& out, Info info) {$/;"	f
 printArray	h.cpp	/^void printArray(const int L[], const int size) {$/;"	f
 printArray	h.h	/^void printArray(const int L[], const int size) {$/;"	f
 printCurrentIndex	h.cpp	/^void printCurrentIndex(list<pair<int, int> >& runs, iter index){$/;"	f
